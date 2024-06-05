@@ -37,7 +37,7 @@ import {HardhatProvider} from './app/providers/hardhat-provider'
 import {GanacheProvider} from './app/providers/ganache-provider'
 import {FoundryProvider} from './app/providers/foundry-provider'
 import {ExternalHttpProvider} from './app/providers/external-http-provider'
-import { GridProviders } from './app/providers/grid-providers'
+import { EnvironmentExplorer } from './app/providers/environment-explorer'
 import { FileDecorator } from './app/plugins/file-decorator'
 import { CodeFormat } from './app/plugins/code-format'
 import { SolidityUmlGen } from './app/plugins/solidity-umlgen'
@@ -269,7 +269,7 @@ class AppComponent {
     const foundryProvider = new FoundryProvider(blockchain)
     const externalHttpProvider = new ExternalHttpProvider(blockchain)
 
-    const gridProviders = new GridProviders()
+    const environmentExplorer = new EnvironmentExplorer()
     // ----------------- convert offset to line/column service -----------
     const offsetToLineColumnConverter = new OffsetToLineColumnConverter()
     Registry.getInstance().put({
@@ -343,7 +343,7 @@ class AppComponent {
       ganacheProvider,
       foundryProvider,
       externalHttpProvider,
-      gridProviders,  
+      environmentExplorer,  
       this.walkthroughService,
       search,
       solidityumlgen,
