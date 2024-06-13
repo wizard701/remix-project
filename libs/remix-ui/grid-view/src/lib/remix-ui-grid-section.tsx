@@ -16,6 +16,7 @@ interface RemixUIGridSectionProps {
   classList?: string
   styleList?: any
   children?: ReactNode
+  header?: ReactNode
 }
 
 export const RemixUIGridSection = (props: RemixUIGridSectionProps) => {
@@ -27,6 +28,7 @@ export const RemixUIGridSection = (props: RemixUIGridSectionProps) => {
     >
       <div className="d-flex flex-column w-100 remixui_grid_section">
         { props.title && <h6 className='mt-1 mb-0 align-items-left '>{ props.title }</h6> }
+        { props.header }
         <div className={(props.hScrollable) ? `d-flex flex-row pb-2  overflow-auto` : `d-flex flex-wrap`}>
           { props.children }
         </div>
